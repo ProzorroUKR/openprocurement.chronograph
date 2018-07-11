@@ -1,5 +1,7 @@
 language: python
 sudo: required
+dist: precise
+group: stable
 before_script:
   - sudo add-apt-repository ppa:chris-lea/libsodium -y
   - sudo apt-get -qq update
@@ -22,10 +24,3 @@ script:
   - bin/nosetests
 after_success:
   - bin/coveralls
-notifications:
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/15e2534ac51757c92e72
-    on_success: always
-    on_failure: always
-    on_start: false
