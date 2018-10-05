@@ -8,7 +8,7 @@ from requests.models import Response
 from requests.structures import CaseInsensitiveDict
 from requests.utils import get_encoding_from_headers
 from openprocurement.chronograph.scheduler import SESSION
-from openprocurement.api.utils import VERSION
+from openprocurement.api.constants import VERSION
 from time import sleep
 try:
     from openprocurement.api.tests.base import test_tender_data
