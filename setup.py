@@ -25,6 +25,8 @@ requires = [
 
 test_requires = requires + [
     'openprocurement.api',
+    'openprocurement.tender.core',
+    'openprocurement.tender.belowthreshold',
     'webtest',
 ]
 

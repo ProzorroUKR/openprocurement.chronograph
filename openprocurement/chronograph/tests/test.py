@@ -10,43 +10,8 @@ from openprocurement.chronograph import TZ
 from openprocurement.chronograph.scheduler import planning_auction, free_slot
 from openprocurement.chronograph.tests.base import BaseWebTest, BaseTenderWebTest, test_tender_data
 
-try:
-    from openprocurement.api.tests.base import test_bids
-except ImportError:
-    test_bids = [
-        {
-            "tenderers": [
-                test_tender_data["procuringEntity"]
-            ],
-            "value": {
-                "amount": 469,
-                "currency": "UAH",
-                "valueAddedTaxIncluded": True
-            }
-        },
-        {
-            "tenderers": [
-                test_tender_data["procuringEntity"]
-            ],
-            "value": {
-                "amount": 479,
-                "currency": "UAH",
-                "valueAddedTaxIncluded": True
-            }
-        }
-    ]
-
-try:
-    from openprocurement.api.tests.base import test_lots
-except ImportError:
-    test_lots = [
-        {
-            'title': 'lot title',
-            'description': 'lot description',
-            'value': test_tender_data['value'],
-            'minimalStep': test_tender_data['minimalStep'],
-        }
-    ]
+from openprocurement.tender.belowthreshold.tests.base import test_bids
+from openprocurement.tender.belowthreshold.tests.base import test_lots
 
 
 LOGGER = getLogger(__name__)
